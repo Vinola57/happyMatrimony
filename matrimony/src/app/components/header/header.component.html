@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="goTo('shortlisted')">Shortlisted Profiles</button>
+    <button mat-menu-item (click)="goTo('interested')">Interested Profiles</button>
+    <button mat-menu-item (click)="goTo('logout')">Logout</button>
+  </mat-menu>
+  <span class="title">Matchmaking App</span>
+</mat-toolbar>

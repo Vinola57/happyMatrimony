@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Pragati",
+    "age": 27,
+    "height": "5 ft 5 in",
+    "education": "MBBS",
+    "profession": "Doctor",
+    "religion": "Hindu - Kayastha",
+    "location": "Chennai, Tamil Nadu",
+    "image": "assets/images/pragati.jpg"
+  },
+  {
+    "name": "Priyanka",
+    "age": 27,
+    "height": "5 ft 2 in",
+    "education": "MBBS",
+    "profession": "Doctor",
+    "religion": "Tamil, Nair",
+    "location": "Chennai, Tamil Nadu",
+    "image": "assets/images/priyanka.jpg"
+  },
+  {
+    "name": "Ayesha",
+    "age": 25,
+    "height": "5 ft 4 in",
+    "education": "B.Tech",
+    "profession": "Software Engineer",
+    "religion": "Muslim - Sunni",
+    "location": "Hyderabad, Telangana",
+    "image": "assets/images/ayesha.jpg"
+  },
+  {
+    "name": "Neha",
+    "age": 28,
+    "height": "5 ft 3 in",
+    "education": "M.Sc Psychology",
+    "profession": "Therapist",
+    "religion": "Hindu - Brahmin",
+    "location": "Bangalore, Karnataka",
+    "image": "assets/images/neha.jpg"
+  },
+  {
+    "name": "Anjali",
+    "age": 29,
+    "height": "5 ft 6 in",
+    "education": "MBA",
+    "profession": "Product Manager",
+    "religion": "Christian - Roman Catholic",
+    "location": "Pune, Maharashtra",
+    "image": "assets/images/anjali.jpg"
+  },
+    {
+        "name": "Sofia",
+        "age": 30,
+        "height": "5 ft 7 in",
+        "education": "M.Tech",
+        "profession": "Data Scientist",
+        "religion": "Hindu - Brahmin",
+        "location": "Delhi, India",
+        "image": "assets/images/sofia.jpg"
+    }
+    ]
