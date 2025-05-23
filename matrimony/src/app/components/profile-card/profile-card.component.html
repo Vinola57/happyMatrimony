@@ -1,12 +1,13 @@
 <div class="main-container">
   
 <div class="profile-card"
+ [ngClass]="{ 'rotate': isRotating }"
   (swipeleft)="onSwipeLeft()"
   (swiperight)="onSwipeRight()"
   [ngStyle]="{ 'z-index': total - index }"
   [class.top-card]="index === 0"
 >
-  <img [src]="profile.image" alt="Profile" />
+  <img [src]="profile.image" alt="Profile"/>
   <div class="info">
 
 <div class="badges" style="display: flex; gap: 8px; margin-bottom: 4px;">
@@ -20,16 +21,16 @@
     <p>{{ profile.location }}</p>
   </div>
   <div class="actions">
-    <button mat-icon-button class="star-btn" (click)="onShortlist()" [ngClass]="{'shortlisted': isShortlisted}">
-      <mat-icon>star</mat-icon>
-    </button>
-    <p class="like">Like her?</p>
-    <button mat-icon-button class="close-btn" (click)="onSwipeLeft()">
-      <mat-icon>close</mat-icon>
-    </button>
-    <button mat-icon-button class="check-btn" (click)="onSwipeRight()">
-      <mat-icon>check</mat-icon>
-    </button>
+<button mat-icon-button class="star-btn" (click)="onShortlist(); onProfileImageClick()" [ngClass]="{'shortlisted': isShortlisted}">
+  <mat-icon>star</mat-icon>
+</button>
+<p class="like">Like her?</p>
+<button mat-icon-button class="close-btn" (click)="onSwipeLeft(); onProfileImageClick()">
+  <mat-icon>close</mat-icon>
+</button>
+<button mat-icon-button class="check-btn" (click)="onSwipeRight(); onProfileImageClick()">
+  <mat-icon>check</mat-icon>
+</button>
   </div>
 </div>
 </div>

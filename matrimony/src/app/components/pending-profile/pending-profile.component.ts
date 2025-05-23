@@ -13,8 +13,10 @@ export class PendingProfileComponent implements OnInit, AfterViewInit {
   visibleCount = 1;
   isAnimating = false;
   visibleProfiles: any[] = [];
+  rotatingProfileId: any=null;
 
   @ViewChild('profileRow', { static: false }) profileRow!: ElementRef;
+  isRotating=false;
 
   constructor(private profileService: ProfileService, private router: Router) {}
 
@@ -116,4 +118,10 @@ export class PendingProfileComponent implements OnInit, AfterViewInit {
     this.currentIndex = 0;
     this.updateVisibleProfiles();
   }
+  onProfileImageClick() {
+  this.isRotating = true;
+  setTimeout(() => {
+    this.isRotating = false;
+  }, 600);
+}
 }

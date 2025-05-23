@@ -9,14 +9,15 @@
     <div
       class="profile-card"
       *ngFor="let profile of visibleProfiles"
+      [ngClass]="{'rotate': rotatingProfileId === profile.id}"
     >
       <img [src]="profile.image" alt="{{ profile.name }}" (click)="onViewProfile(profile)" />
       <div class="info">
         <h3 class="name">{{ profile.name }}</h3>
         <p>{{ profile.details }}</p>
         <div class="actions">
-          <button mat-icon-button class="check-btn" (click)="swipeYes(profile)">Yes</button>
-          <button mat-icon-button class="close-btn" (click)="swipeNo(profile)">No</button>
+          <button mat-icon-button class="check-btn" (click)="swipeYes(profile);  onProfileImageClick()">Yes</button>
+          <button mat-icon-button class="close-btn" (click)="swipeNo(profile) ;  onProfileImageClick()">No</button>
         </div>
       </div>
     </div>

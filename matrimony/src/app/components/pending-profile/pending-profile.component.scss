@@ -142,26 +142,6 @@
   }
 }
 
-@keyframes rotateOut {
-  0% {
-    transform: rotateY(0deg);
-    opacity: 1;
-  }
-  100% {
-    transform: rotateY(180deg);
-    opacity: 0;
-  }
-}
-
-.profile-card.rotate {
-  animation: rotateOut 0.6s forwards;
-}
-
-.profile-card {
-  transition: transform 0.5s;
-  transform-style: preserve-3d;
-}
-
 .nav-btn {
   position: absolute;
   top: 50%;
@@ -241,4 +221,18 @@
     font-size: 13px !important;
     line-height: 13px !important;
   }
+}
+@keyframes rotateOut {
+  0% {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(180deg); // <-- rotate a full 180 degrees
+    opacity: 0;
+  }
+}
+
+.profile-card.rotate {
+  animation: rotateOut 0.6s forwards;
 }

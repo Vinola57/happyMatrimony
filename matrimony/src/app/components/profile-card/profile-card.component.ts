@@ -21,6 +21,7 @@ export class ProfileCardComponent {
 constructor(private router: Router) {}
 
   isShortlisted = false;
+  isRotating = false;
 
 onSwipeLeft() {
   console.log('Left clicked');
@@ -34,5 +35,11 @@ onSwipeRight() {
 onShortlist() {
   this.isShortlisted = !this.isShortlisted;
   this.action.emit({ type: 'shortlist', profile: this.profile });
+}
+onProfileImageClick() {
+  this.isRotating = true;
+  setTimeout(() => {
+    this.isRotating = false;
+  }, 600);
 }
 }
