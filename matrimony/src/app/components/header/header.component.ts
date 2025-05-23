@@ -10,11 +10,10 @@ export class HeaderComponent {
   constructor(private router: Router) {}
 
   goTo(page: string) {
-    if (page === 'logout') {
-      // Add logout logic here if needed
-      this.router.navigate(['/login']);
-    } else {
-      this.router.navigate(['/' + page]);
-    }
+    if (page === 'pending') {
+      this.router.navigate(['/pending-profile']);
+    } else if (page === 'recommendation') {
+    this.router.navigate(['daily-recommendation']);
   }
+}
 }

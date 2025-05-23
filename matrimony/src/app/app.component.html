@@ -1,13 +1,5 @@
 
-<app-header></app-header>
-<div class="main-container">
-<app-profile-card
-  *ngFor="let profile of profiles; let i = index"
-  [profile]="profile"
-  [index]="i - currentIndex"
-  [total]="profiles.length - currentIndex"
-  (action)="handleAction($event)">
-</app-profile-card>
 
-</div>
+
+<router-outlet></router-outlet>
 

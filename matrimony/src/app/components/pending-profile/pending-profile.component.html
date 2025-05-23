@@ -1,0 +1,28 @@
+<app-header></app-header>
+<p class="pending">Profiles pending with me <span class="new" (click)="showAllProfiles()">new</span></p>
+<div class="profile-row-container">
+  <button mat-icon-button class="nav-btn left" (click)="scrollLeft()" *ngIf="canScrollLeft">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+
+  <div class="profile-row" #profileRow>
+    <div
+      class="profile-card"
+      *ngFor="let profile of visibleProfiles"
+    >
+      <img [src]="profile.image" alt="{{ profile.name }}" (click)="onViewProfile(profile)" />
+      <div class="info">
+        <h3 class="name">{{ profile.name }}</h3>
+        <p>{{ profile.details }}</p>
+        <div class="actions">
+          <button mat-icon-button class="check-btn" (click)="swipeYes(profile)">Yes</button>
+          <button mat-icon-button class="close-btn" (click)="swipeNo(profile)">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button mat-icon-button class="nav-btn right" (click)="scrollRight()" *ngIf="canScrollRight">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</div>

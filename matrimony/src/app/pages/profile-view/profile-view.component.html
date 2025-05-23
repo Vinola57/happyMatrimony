@@ -1,5 +1,5 @@
 <div class="profile-view" *ngIf="profile">
-  <mat-toolbar color="primary">
+  <mat-toolbar class="goBack">
     <button mat-icon-button (click)="goBack()">
       <mat-icon>arrow_back</mat-icon>
     </button>
@@ -7,14 +7,11 @@
   </mat-toolbar>
 
   <div class="content">
-    <img [src]="profile.image" alt="Profile" (click)="onViewProfile(profile)"/>
-
+    <img [src]="profile.image" alt="Profile" >
     <mat-card>
-      <mat-card-title>{{ profile.name }}, {{ profile.age }}</mat-card-title>
+      <mat-card-title>{{ profile.name }}</mat-card-title>
       <mat-card-content>
-        <p><strong>Profession:</strong> {{ profile.profession }}</p>
-        <p><strong>Location:</strong> {{ profile.location }}</p>
-        <p><strong>Bio:</strong> {{ profile.bio }}</p>
+        <p><strong>Bio:</strong> {{ profile.details }}</p>
       </mat-card-content>
     </mat-card>
   </div>

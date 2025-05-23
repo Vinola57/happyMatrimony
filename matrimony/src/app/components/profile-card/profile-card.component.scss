@@ -1,6 +1,6 @@
 .main-container {
   display: flex;
-  justify-content: center;  // horizontal center
+
   align-items: center;      // vertical center   // optional, for contrast
 }
 .top-card {
@@ -23,9 +23,8 @@
 .profile-card img,
 .mat-card img,
 .mat-mdc-card img {
-  width: 100%;
-  max-width: 100%;
-  height: 500px;
+ 
+      height: 370px;
   object-fit: cover;
   border-radius: 16px 16px 0 0;
   display: block;
@@ -109,4 +108,45 @@
 .actions .check-btn {
   border: 2px solid #43a047;
   .mat-icon { color: #43a047; }
+}
+::ng-deep .badges .bordered-paragraph{
+  justify-content: left !important;
+  font-size: 12px;
+  color: rgb(49, 95, 245);
+}
+@media (min-width: 340px) and (max-width: 600px) {
+  .profile-card, .mat-mdc-card, .mat-card {
+    max-width: 96vw;
+    min-height: 320px;
+    border-radius: 10px;
+    margin: 10px auto;
+  }
+  .profile-card img,
+  .mat-card img,
+  .mat-mdc-card img {
+    height: 350px;
+    border-radius: 8px 8px 0 0;
+  }
+  .profile-card .info,
+  .mat-mdc-card .info,
+  .mat-card .info {
+    padding: 6px;
+    font-size: 13px;
+  }
+  .actions {
+    gap: 8px;
+    padding: 8px 0;
+  }
+  .actions button[mat-icon-button] {
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    min-height: 28px !important;
+    mat-icon {
+      font-size: 18px !important;
+    }
+  }
+  .name {
+    font-size: 1.1rem;
+  }
 }

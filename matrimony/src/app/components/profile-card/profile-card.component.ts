@@ -16,26 +16,23 @@ export class ProfileCardComponent {
   @Input() profile: any;
   @Input() index!: number;
   @Input() total!: number;
-  @Output() action = new EventEmitter<ActionEvent>();
+ @Output() action = new EventEmitter<{ type: string, profile?: any }>();
   
 constructor(private router: Router) {}
 
   isShortlisted = false;
 
-  onSwipeLeft() {
-    this.action.emit({ type: 'not-interested' });
-  }
+onSwipeLeft() {
+  console.log('Left clicked');
+  this.action.emit({ type: 'not-interested' });
+}
 
-  onSwipeRight() {
-    this.action.emit({ type: 'interested' });
-  }
+onSwipeRight() {
+  this.action.emit({ type: 'interested', profile: this.profile });
+}
 
-  onShortlist() {
-    this.isShortlisted = !this.isShortlisted;
-    this.action.emit({ type: 'shortlist' });
-  }
-
-  onViewProfile() {
-    this.action.emit({ type: 'view', profile: this.profile });
-  }
+onShortlist() {
+  this.isShortlisted = !this.isShortlisted;
+  this.action.emit({ type: 'shortlist', profile: this.profile });
+}
 }

@@ -14,7 +14,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HeaderComponent } from './components/header/header.component';
 import { ShortlistedComponent } from './pages/shortlisted/shortlisted.component';
-import { InterestedComponent } from './pages/interested/interested.component';
+import { DailyRecommendationComponent } from './pages/daily-recommendation/daily-recommendation.component';
+import { PendingProfileComponent } from './components/pending-profile/pending-profile.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { InterestedComponent } from './pages/interested/interested.component';
     ProfileViewComponent,
     HeaderComponent,
     ShortlistedComponent,
-    InterestedComponent
+    PendingProfileComponent,
+    HomeComponent,
+    DailyRecommendationComponent
   ],
   imports: [
     BrowserModule,
