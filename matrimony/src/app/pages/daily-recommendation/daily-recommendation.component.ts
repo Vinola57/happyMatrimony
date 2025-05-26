@@ -14,7 +14,7 @@ export class DailyRecommendationComponent implements OnInit {
   location: any;
 
 
-  constructor(private http: HttpClient, private snackBar: MatSnackBar,  private router: Router) {} // <-- Correct injection
+  constructor(private http: HttpClient, private snackBar: MatSnackBar, private router: Router) { } // <-- Correct injection
 
   ngOnInit() {
     this.http.get<any[]>('assets/profiles.json').subscribe(data => {
@@ -22,20 +22,20 @@ export class DailyRecommendationComponent implements OnInit {
     });
   }
 
-onProfileAction(event: { type: string, profile?: any }) {
-  if (event.type === 'interested') {
-    this.snackBar.open('Interested', '', { duration: 1500, verticalPosition: 'top' });
-  } else if (event.type === 'not-interested') {
-    this.snackBar.open('Not Interested', '', { duration: 1500, verticalPosition: 'top' });
-  } else if (event.type === 'shortlist') {
-    this.snackBar.open('Shortlisted', '', { duration: 1500, verticalPosition: 'top' });
-  }
+  onProfileAction(event: { type: string, profile?: any }) {
+    if (event.type === 'interested') {
+      this.snackBar.open('Interested', '', { duration: 1500, verticalPosition: 'top' });
+    } else if (event.type === 'not-interested') {
+      this.snackBar.open('Not Interested', '', { duration: 1500, verticalPosition: 'top' });
+    } else if (event.type === 'shortlist') {
+      this.snackBar.open('Shortlisted', '', { duration: 1500, verticalPosition: 'top' });
+    }
 
-  if (this.currentIndex < this.profiles.length - 1) {
-    this.currentIndex++;
+    if (this.currentIndex < this.profiles.length - 1) {
+      this.currentIndex++;
+    }
   }
-}
-goBack() {
+  goBack() {
     this.router.navigate(['/pending-profile']);
   }
 }

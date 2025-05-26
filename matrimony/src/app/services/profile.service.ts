@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ProfileService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
   getProfiles(): Observable<any[]> {
     return this.http.get<any[]>('assets/profiles.json');
   }
@@ -17,22 +17,22 @@ export class ProfileService {
       },
       {
         name: 'Anjali',
-        image:  "assets/images/anjali.jpg",
+        image: "assets/images/anjali.jpg",
         details: '26 Yrs, 5 ft 3 in, Tamil, MBA, Product Manager, Pune, Maharashtra, India'
       },
-            {
+      {
         name: 'Neha',
-        image:  "assets/images/neha.jpg",
+        image: "assets/images/neha.jpg",
         details: '26 Yrs, 5 ft 6 in, Tamil, M.Sc Psychology, Therapist, Tamil Nadu, India'
       },
       {
         name: 'Pragathi',
-        image:   "assets/images/pragati.jpg",
+        image: "assets/images/pragati.jpg",
         details: '26 Yrs, 5 ft 6 in, Tamil, MBBS, Doctor, Tamil Nadu, India'
       },
       {
         name: 'Sofia',
-        image:  "assets/images/sofia.jpg",
+        image: "assets/images/sofia.jpg",
         details: '26 Yrs, 5 ft 1 in, Tamil, M.Tech, Data Scientist, Tamil Nadu, India'
       },
     ];

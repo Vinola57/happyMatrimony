@@ -6,11 +6,8 @@
   </button>
 
   <div class="profile-row" #profileRow>
-    <div
-      class="profile-card"
-      *ngFor="let profile of visibleProfiles"
-      [ngClass]="{'rotate': rotatingProfileId === profile.id}"
-    >
+    <div class="profile-card" *ngFor="let profile of visibleProfiles"
+      [ngClass]="{'rotate': rotatingProfileId === profile.id}">
       <img [src]="profile.image" alt="{{ profile.name }}" (click)="onViewProfile(profile)" />
       <div class="info">
         <h3 class="name">{{ profile.name }}</h3>

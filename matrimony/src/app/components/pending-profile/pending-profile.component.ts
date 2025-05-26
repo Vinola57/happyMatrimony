@@ -13,16 +13,15 @@ export class PendingProfileComponent implements OnInit, AfterViewInit {
   visibleCount = 1;
   isAnimating = false;
   visibleProfiles: any[] = [];
-  rotatingProfileId: any=null;
+  rotatingProfileId: any = null;
 
   @ViewChild('profileRow', { static: false }) profileRow!: ElementRef;
-  isRotating=false;
+  isRotating = false;
 
-  constructor(private profileService: ProfileService, private router: Router) {}
+  constructor(private profileService: ProfileService, private router: Router) { }
 
   ngOnInit() {
     this.profiles = this.profileService.getPendingProfiles();
-    // Don't call updateVisibleProfiles here, wait for ngAfterViewInit
   }
 
   ngAfterViewInit() {
@@ -39,7 +38,6 @@ export class PendingProfileComponent implements OnInit, AfterViewInit {
   }
 
   updateVisibleCount() {
-    // Default card width + gap (adjust if your CSS changes)
     const cardWidth = 350; // px
     const gap = 16; // px
     const container = this.profileRow?.nativeElement?.offsetWidth || window.innerWidth;
@@ -119,9 +117,9 @@ export class PendingProfileComponent implements OnInit, AfterViewInit {
     this.updateVisibleProfiles();
   }
   onProfileImageClick() {
-  this.isRotating = true;
-  setTimeout(() => {
-    this.isRotating = false;
-  }, 600);
-}
+    this.isRotating = true;
+    setTimeout(() => {
+      this.isRotating = false;
+    }, 600);
+  }
 }

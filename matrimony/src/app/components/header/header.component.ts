@@ -7,13 +7,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   goTo(page: string) {
     if (page === 'pending') {
       this.router.navigate(['/pending-profile']);
     } else if (page === 'recommendation') {
-    this.router.navigate(['daily-recommendation']);
+      this.router.navigate(['daily-recommendation']);
+    }
   }
-}
 }

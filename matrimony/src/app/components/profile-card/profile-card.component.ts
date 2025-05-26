@@ -16,30 +16,30 @@ export class ProfileCardComponent {
   @Input() profile: any;
   @Input() index!: number;
   @Input() total!: number;
- @Output() action = new EventEmitter<{ type: string, profile?: any }>();
-  
-constructor(private router: Router) {}
+  @Output() action = new EventEmitter<{ type: string, profile?: any }>();
+
+  constructor(private router: Router) { }
 
   isShortlisted = false;
   isRotating = false;
 
-onSwipeLeft() {
-  console.log('Left clicked');
-  this.action.emit({ type: 'not-interested' });
-}
+  onSwipeLeft() {
+    console.log('Left clicked');
+    this.action.emit({ type: 'not-interested' });
+  }
 
-onSwipeRight() {
-  this.action.emit({ type: 'interested', profile: this.profile });
-}
+  onSwipeRight() {
+    this.action.emit({ type: 'interested', profile: this.profile });
+  }
 
-onShortlist() {
-  this.isShortlisted = !this.isShortlisted;
-  this.action.emit({ type: 'shortlist', profile: this.profile });
-}
-onProfileImageClick() {
-  this.isRotating = true;
-  setTimeout(() => {
-    this.isRotating = false;
-  }, 600);
-}
+  onShortlist() {
+    this.isShortlisted = !this.isShortlisted;
+    this.action.emit({ type: 'shortlist', profile: this.profile });
+  }
+  onProfileImageClick() {
+    this.isRotating = true;
+    setTimeout(() => {
+      this.isRotating = false;
+    }, 600);
+  }
 }
